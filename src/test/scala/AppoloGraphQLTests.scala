@@ -18,6 +18,8 @@ class AppoloGraphQLTests {
     val response = `given`()
       .contentType(ContentType.JSON)
       .body(query)
+      .log()
+      .headers()
       .when()
       .post(url+endpoint)
       .`then`()
